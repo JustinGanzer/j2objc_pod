@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'j2objc_pod'
-  s.version = '0.0.1'
+  s.version = '0.0.2'
   s.summary = "J2ObjC's JRE emulation library, emulates a subset of the Java runtime library."
   s.homepage = 'http://j2objc.org'
 
@@ -34,4 +34,4 @@ s.pod_target_xcconfig = {
     'USER_HEADER_SEARCH_PATHS' => '${PODS_ROOT}/j2objc_pod/dist/include'
   }
   
-end
+=end
