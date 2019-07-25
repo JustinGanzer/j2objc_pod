@@ -17,9 +17,17 @@ DOWNLOADURL="https://github.com/google/j2objc/releases/download/${VERSION}/${ZIP
 CHECKSUM="ae1536d21da2891d15e1528e77830de3687cb8b6d5772c6d91824099d0185b8b"
 
 #If there's a distribution already, return
-if [ -d dist ]
+if [[ -d dist && -f dist/VERSION.txt ]]
 then
-  exit
+  #Read first line of version.txt
+  CURRENTVERSION=$(head -n 1 dist/VERSION.txt)
+  #If they're the same, no need to download j2obc
+  if [ "$VERSION" = "$CURRENTVERSION" ]
+  then
+  echo "Already using correct version of J2OBJC"
+    exit
+  fi
+  echo "Not using correct version of J2OBJC, must download"
 fi
 
 #Zip file exists, continue here
