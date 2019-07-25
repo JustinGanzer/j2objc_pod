@@ -1,0 +1,49 @@
+#!/bin/bash
+#Fail upon 
+# -e = command fail
+# -u = unset variables
+# -o pipefail = -e and -u will catch not only the last pipe command but all
+set -euo pipefail
+
+#j2obc version
+VERSION="2.5"
+#Folder name when unzipped
+FOLDER="j2objc-${VERSION}"
+#Zipfile name
+ZIPFILE="${FOLDER}.zip"
+#Url where file is to be downloaded from
+DOWNLOADURL="https://github.com/google/j2objc/releases/download/${VERSION}/${ZIPFILE}"
+#Prechecked Checksum for Version 2.5
+CHECKSUM = "ae1536d21da2891d15e1528e77830de3687cb8b6d5772c6d91824099d0185b8b"
+
+#If there's a distribution already, return
+if [ -d dist ]
+then
+  exit
+fi
+
+#Zip file exists, continue here
+if [ -f "$ZIPFILE" ]
+then
+    echo "$ZIPFILE found"
+else
+    echo "Fetching J2ObjC v${VERSION} from ${DOWNLOADURL}"
+    curl -OL "${DOWNLOADURL}"
+fi
+
+#Check checksums
+if [ echo "${CHECKSUM}  ${ZIPFILE}" | shasum --algorithm 512256 -c ]
+then
+  unzip -o -q "${ZIPFILE}"
+else
+  echo "Checksums don't match! Removing file and exiting."
+  rm -f "${ZIPFILE}"
+  exit
+fi
+
+#Rename folder to dist in order to always keep the same path reference through updates
+mv "${FOLDER}" dist
+#Remove zip file
+rm -f "${ZIPFILE}"
+#Write version into the version text file. Cocoapods will remove this file if not correctly excluded in the podspec file.
+echo "${VERSION}" > dist/VERSION.txt
