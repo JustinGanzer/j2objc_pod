@@ -15,11 +15,11 @@ Pod::Spec.new do |s|
   s.requires_arc = false
 
   s.preserve_paths = 'dist'
-  s.public_header_files = 'dist/include/**/*.h'
+  #s.public_header_files = 'dist/include/**/*.h'
   s.source_files = 'dist/include/**/*.h'
   s.header_mappings_dir = 'dist/include'
 
-  s.vendored_frameworks = 'dist/frameworks/**/*'
+  #s.vendored_frameworks = 'dist/frameworks/**/*'
   s.vendored_libraries = 'dist/lib/**/*'
 
   s.user_target_xcconfig = { 
