@@ -54,5 +54,6 @@ fi
 mv "${FOLDER}" dist
 #Remove zip file
 rm -f "${ZIPFILE}"
+rm -rf dist/include/guava_android
 #Write version into the version text file. Cocoapods will remove this file if not correctly excluded in the podspec file.
 echo "${VERSION}" > dist/VERSION.txt
