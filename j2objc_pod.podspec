@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'j2objc_pod'
-  s.version = '0.0.15'
+  s.version = '0.0.16'
   s.summary = "J2ObjC's JRE emulation library, emulates a subset of the Java runtime library."
   s.homepage = 'http://j2objc.org'
 
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.platform = :ios
   s.source = { :git => 'https://github.com/JustinGanzer/j2objc_pod.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '12.0'
   #s.static_framework = true
   s.requires_arc = false
 
