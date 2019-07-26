@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'j2objc_pod'
-  s.version = '0.0.11'
+  s.version = '0.0.12'
   s.summary = "J2ObjC's JRE emulation library, emulates a subset of the Java runtime library."
   s.homepage = 'http://j2objc.org'
 
@@ -15,11 +15,11 @@ Pod::Spec.new do |s|
   s.requires_arc = false
 
   s.preserve_paths = 'dist'
-  s.public_header_files = 'dist/include/**/*.h'
+  #s.public_header_files = 'dist/include/**/*.h'
   s.source_files = 'dist/include/**/*.h'
   s.header_mappings_dir = 'dist/include'
 
-  s.vendored_frameworks = 'dist/frameworks/**/*'
+  #s.vendored_frameworks = 'dist/frameworks/**/*'
   s.vendored_libraries = 'dist/lib/**/*'
 
   s.user_target_xcconfig = { 
