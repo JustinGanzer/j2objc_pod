@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   #s.source_files = 'dist/include/**/*.h'
   s.header_mappings_dir = 'dist/include'
 
-  spec.user_target_xcconfig = { 
+  s.user_target_xcconfig = { 
     'LIBRARY_SEARCH_PATHS' => '${PODS_ROOT}/j2objc_pod/dist/lib',
     'FRAMEWORK_SEARCH_PATHS' => '${PODS_ROOT}/j2objc_pod/dist/frameworks',
     'USER_HEADER_SEARCH_PATHS' => '${PODS_ROOT}/j2objc_pod/dist/include'
