@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'j2objc_pod'
-  s.version = '0.0.19'
+  s.version = '0.0.20'
   s.summary = "J2ObjC's JRE emulation library, emulates a subset of the Java runtime library."
   s.homepage = 'http://j2objc.org'
 
@@ -25,8 +25,7 @@ Pod::Spec.new do |s|
   s.user_target_xcconfig = { 
     'LIBRARY_SEARCH_PATHS' => '${PODS_ROOT}/j2objc_pod/dist/lib',
     'FRAMEWORK_SEARCH_PATHS' => '${PODS_ROOT}/j2objc_pod/dist/frameworks',
-    'USER_HEADER_SEARCH_PATHS' => '${PODS_ROOT}/j2objc_pod/dist/include',
-    'OTHER_LDFLAGS' => ['-ljre_core', '-ljre_zip', '-lprotobuf_runtime', '-liconv','-lz','-lc++']
+    'USER_HEADER_SEARCH_PATHS' => '${PODS_ROOT}/j2objc_pod/dist/include'
   }
 
   s.prepare_command = 'scripts/download.sh'
