@@ -20,7 +20,7 @@ CHECKSUM="ae1536d21da2891d15e1528e77830de3687cb8b6d5772c6d91824099d0185b8b"
 
 if [ "$USECUSTOMVERSION" = "true" ]
 then
-  DOWNLOADURL="https://dl.dropboxusercontent.com/s/0e6ayp6rufmgjg0/j2objc_pod.zip?dl=0"
+  DOWNLOADURL="https://dl.dropboxusercontent.com/s/0e6ayp6rufmgjg0/j2objc_pod.zip"
   VERSION=$DOWNLOADURL
   CHECKSUM="NO"
   ZIPFILE="j2objc_pod.zip"
