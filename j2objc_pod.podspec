@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'j2objc_pod'
-  s.version = '0.0.20'
+  s.version = '0.0.21'
   s.summary = "J2ObjC's JRE emulation library, emulates a subset of the Java runtime library."
   s.homepage = 'http://j2objc.org'
 
