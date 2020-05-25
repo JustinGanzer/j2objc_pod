@@ -7,6 +7,8 @@ set -euo pipefail
 
 #j2obc version
 VERSION="2.5"
+#Bool if custom version should be used
+USECUSTOMVERSION="true"
 #Folder name when unzipped
 FOLDER="j2objc-${VERSION}"
 #Zipfile name
@@ -15,6 +17,16 @@ ZIPFILE="${FOLDER}.zip"
 DOWNLOADURL="https://github.com/google/j2objc/releases/download/${VERSION}/${ZIPFILE}"
 #Prechecked Checksum for Version 2.5
 CHECKSUM="ae1536d21da2891d15e1528e77830de3687cb8b6d5772c6d91824099d0185b8b"
+
+if [ "$USECUSTOMVERSION" = "true" ]
+  then
+  DOWNLOADURL = "https://drive.google.com/open?id=1CT-3wbYLLZtnh9nrkJPaUwfEXEpt5Vqw"
+  VERSION = $DOWNLOADURL
+  CHECKSUM = "NO"
+  ZIPFILE = "j2objc_pod.zip"
+  FOLDER = "j2objc_pod/dist"
+  else
+  fi
 
 #If there's a distribution already, return
 if [[ -d dist && -f dist/VERSION.txt ]]
@@ -39,7 +51,13 @@ else
     curl -OL "${DOWNLOADURL}"
 fi
 
-NEWCHECKSUM=$(shasum --algorithm 512256 j2objc-2.5.zip)
+if [ "$CHECKSUM" = "NO" ]
+then
+  NEWCHECKSUM="${CHECKSUM}  ${ZIPFILE}"
+else
+  NEWCHECKSUM=$(shasum --algorithm 512256 j2objc-2.5.zip)
+fi
+
 #Check checksums
 if [ "${CHECKSUM}  ${ZIPFILE}" = "${NEWCHECKSUM}" ]
 then
