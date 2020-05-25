@@ -20,7 +20,7 @@ CHECKSUM="ae1536d21da2891d15e1528e77830de3687cb8b6d5772c6d91824099d0185b8b"
 
 if [ "$USECUSTOMVERSION" = "true" ]
 then
-  DOWNLOADURL="https://drive.google.com/open?id=1CT-3wbYLLZtnh9nrkJPaUwfEXEpt5Vqw"
+  DOWNLOADURL="https://drive.google.com/uc?export=download&id=1CT-3wbYLLZtnh9nrkJPaUwfEXEpt5Vqw"
   VERSION=$DOWNLOADURL
   CHECKSUM="NO"
   ZIPFILE="j2objc_pod.zip"
