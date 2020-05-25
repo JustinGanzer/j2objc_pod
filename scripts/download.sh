@@ -19,14 +19,13 @@ DOWNLOADURL="https://github.com/google/j2objc/releases/download/${VERSION}/${ZIP
 CHECKSUM="ae1536d21da2891d15e1528e77830de3687cb8b6d5772c6d91824099d0185b8b"
 
 if [ "$USECUSTOMVERSION" = "true" ]
-  then
+then
   DOWNLOADURL = "https://drive.google.com/open?id=1CT-3wbYLLZtnh9nrkJPaUwfEXEpt5Vqw"
   VERSION = $DOWNLOADURL
   CHECKSUM = "NO"
   ZIPFILE = "j2objc_pod.zip"
   FOLDER = "j2objc_pod/dist"
-  else
-  fi
+fi
 
 #If there's a distribution already, return
 if [[ -d dist && -f dist/VERSION.txt ]]
