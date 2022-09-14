@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'j2objc_pod'
-  s.version = '0.9.4'
+  s.version = '0.9.5'
   s.summary = "J2ObjC's JRE emulation library, emulates a subset of the Java runtime library."
   s.homepage = 'http://j2objc.org'
 
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.license = { :type => 'Apache-2.0', :file => 'LICENSE' }
 
   s.platform = :ios
-  s.source = { :http => 'https://u247826.your-storagebox.de/ios/dependencies/j2objc/2.8a/j2objcframeworks.zip' }
+  s.source = { :http => 'https://u247826.your-storagebox.de/ios/dependencies/j2objc/2.8a/bundle.zip' }
 
   s.ios.deployment_target = '12.0'
   s.static_framework = true
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   #s.source_files = 'dist/include/**/*.h'
   #s.header_mappings_dir = 'dist/include'
 
-  #s.vendored_frameworks = 'dist/frameworks/**/*'
+  s.vendored_frameworks = 'JRE.xcframework', 'JSON.xcframework', 'ProtobufRuntime.xcframework'
   #s.vendored_libraries = 'dist/lib/*.a'
 
   #s.user_target_xcconfig = { 
