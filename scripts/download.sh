@@ -20,7 +20,7 @@ CHECKSUM="ae1536d21da2891d15e1528e77830de3687cb8b6d5772c6d91824099d0185b8b"
 
 if [ "$USECUSTOMVERSION" = "true" ]
 then
-  DOWNLOADURL="https://u247826.your-storagebox.de/ios/dependencies/j2objc/2.7.1/dist.zip"
+  DOWNLOADURL="https://u247826.your-storagebox.de/ios/dependencies/j2objc/2.7.1-minified/dist.zip"
   VERSION=$DOWNLOADURL
   CHECKSUM="NO"
   ZIPFILE="dist.zip"
