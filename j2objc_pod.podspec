@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'j2objc_pod'
-  s.version = '0.9.3'
+  s.version = '0.9.4'
   s.summary = "J2ObjC's JRE emulation library, emulates a subset of the Java runtime library."
   s.homepage = 'http://j2objc.org'
 
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.license = { :type => 'Apache-2.0', :file => 'LICENSE' }
 
   s.platform = :ios
-  s.source = { :http => 'https://u247826.your-storagebox.de/ios/dependencies/j2objc/2.8a/JRE.xcframework.zip', :http => 'https://u247826.your-storagebox.de/ios/dependencies/j2objc/2.8a/JSON.xcframework.zip', :http => 'https://u247826.your-storagebox.de/ios/dependencies/j2objc/2.8a/ProtobufRuntime.xcframework.zip' }
+  s.source = { :http => 'https://u247826.your-storagebox.de/ios/dependencies/j2objc/2.8a/j2objcframeworks.zip' }
 
   s.ios.deployment_target = '12.0'
   s.static_framework = true
@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
   #}
 
   s.user_target_xcconfig = {
-    'HEADER_SEARCH_PATHS' => '${PODS_ROOT}/JRE.xcframework/Headers ${PODS_ROOT}/JSON.xcframework/Headers ${PODS_ROOT}/ProtobufRuntime.xcframework/Headers'
+    'HEADER_SEARCH_PATHS' => '${PODS_ROOT}/j2objc_pod/JRE.xcframework/Headers ${PODS_ROOT}/j2objc_pod/JSON.xcframework/Headers ${PODS_ROOT}/j2objc_pod/ProtobufRuntime.xcframework/Headers'
   }
 
   #s.prepare_command = 'scripts/download.sh'
