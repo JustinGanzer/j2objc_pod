@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'j2objc_pod'
-  s.version = '0.9.2'
+  s.version = '0.9.3'
   s.summary = "J2ObjC's JRE emulation library, emulates a subset of the Java runtime library."
   s.homepage = 'http://j2objc.org'
 
@@ -8,13 +8,13 @@ Pod::Spec.new do |s|
   s.license = { :type => 'Apache-2.0', :file => 'LICENSE' }
 
   s.platform = :ios
-  s.source = { :git => 'https://github.com/JustinGanzer/j2objc_pod.git', :tag => s.version.to_s }
+  s.source = { :http => 'https://u247826.your-storagebox.de/ios/dependencies/j2objc/2.8a/JRE.xcframework.zip', :http => 'https://u247826.your-storagebox.de/ios/dependencies/j2objc/2.8a/JSON.xcframework.zip', :http => 'https://u247826.your-storagebox.de/ios/dependencies/j2objc/2.8a/ProtobufRuntime.xcframework.zip' }
 
   s.ios.deployment_target = '12.0'
   s.static_framework = true
   s.requires_arc = false
 
-  s.preserve_paths = 'dist'
+  #s.preserve_paths = 'dist'
   #s.public_header_files = 'dist/include/**/*.h'
   #s.source_files = 'dist/include/**/*.h'
   #s.header_mappings_dir = 'dist/include'
@@ -22,14 +22,18 @@ Pod::Spec.new do |s|
   #s.vendored_frameworks = 'dist/frameworks/**/*'
   #s.vendored_libraries = 'dist/lib/*.a'
 
-  s.user_target_xcconfig = { 
-    'LIBRARY_SEARCH_PATHS' => '${PODS_ROOT}/j2objc_pod/dist/lib',
-    'FRAMEWORK_SEARCH_PATHS' => '${PODS_ROOT}/j2objc_pod/dist/frameworks',
-    'USER_HEADER_SEARCH_PATHS' => '${PODS_ROOT}/j2objc_pod/dist/include',
-    'OTHER_LDFLAGS' => ['-liconv','-lz','-lc++','-ljre_emul','-lprotobuf_runtime','-ljson']
+  #s.user_target_xcconfig = { 
+  #  'LIBRARY_SEARCH_PATHS' => '${PODS_ROOT}/j2objc_pod/dist/lib',
+  #  'FRAMEWORK_SEARCH_PATHS' => '${PODS_ROOT}/j2objc_pod/dist/frameworks',
+  #  'USER_HEADER_SEARCH_PATHS' => '${PODS_ROOT}/j2objc_pod/dist/include',
+  #  'OTHER_LDFLAGS' => ['-liconv','-lz','-lc++','-ljre_emul','-lprotobuf_runtime','-ljson']
+  #}
+
+  s.user_target_xcconfig = {
+    'HEADER_SEARCH_PATHS' => '${PODS_ROOT}/JRE.xcframework/Headers ${PODS_ROOT}/JSON.xcframework/Headers ${PODS_ROOT}/ProtobufRuntime.xcframework/Headers'
   }
 
-  s.prepare_command = 'scripts/download.sh'
+  #s.prepare_command = 'scripts/download.sh'
 end
 
 =begin
