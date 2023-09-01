@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'j2objc_pod'
-  s.version = '0.9.6'
+  s.version = '0.9.7'
   s.summary = "J2ObjC's JRE emulation library, emulates a subset of the Java runtime library."
   s.homepage = 'http://j2objc.org'
 
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.license = { :type => 'Apache-2.0', :file => 'LICENSE' }
 
   s.platform = :ios
-  s.source = { :http => 'https://u247826.your-storagebox.de/ios/dependencies/j2objc/2.8b/bundle.zip' }
+  s.source = { :http => 'https://u247826.your-storagebox.de/ios/dependencies/j2objc/2.8c/bundle.zip' }
 
   s.ios.deployment_target = '12.0'
   s.static_framework = true
